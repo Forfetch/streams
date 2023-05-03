@@ -1,10 +1,36 @@
 import java.util.Comparator;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
+// 5 lesson
+//        Stream.of(1, 2, 3, 4, 2, 6, 7, 2)
+//                .takeWhile(x -> x < 3)
+//                .forEach(System.out::println);
+//
+//        IntStream.range(2,7)
+//                .takeWhile(x -> x !=5)
+//                .forEach(System.out::println);
+//
+//        Stream.of(1,2,3,4,5,2)
+//                .dropWhile(x->x>=3)
+//                .forEach(System.out::println);
+//        Stream.of(1,2,3,4,2,5)
+//                .dropWhile(x->x<3)
+//                .forEach(System.out::println);
+//        IntStream.range(2, 7)
+//                .dropWhile(x -> x < 5)
+//                .forEach(System.out::println);
+//        IntStream.of(1, 3, 2, 0, 5, 4)
+//                .dropWhile(x -> x % 2 == 1)
+//                .forEach(System.out::println);
+//        DoubleStream.of(0.1,Math.PI)
+//                .boxed()
+//                .map(Object::getClass)
+//                .forEach(System.out::println);
 // 4 lesson
 //        Stream.of(120,410,85,32,314,12)
 //                .skip(2)
