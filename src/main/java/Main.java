@@ -1,10 +1,41 @@
+import java.util.Comparator;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-
+// 4 lesson
+//        Stream.of(120,410,85,32,314,12)
+//                .skip(2)
+//                .forEach(System.out::println);
+//        IntStream.range(0,10)
+//                .limit(5)
+//                .skip(3)
+//                .forEach(System.out::println);
+//        IntStream.range(0,10)
+//                .skip(5)
+//                .limit(3)
+//                .skip(1)
+//                .forEach(System.out::println);
+//        IntStream.range(0, 1000000)
+//                .sorted()
+//                .limit(3)
+//                .forEach(System.out::println);
+//        Stream.of(120,410,85,32,314,12)
+//                .sorted()
+//                .forEach(System.out::println);
+//        Stream.of(120,410,85,32,314,12)
+//                .sorted(Comparator.reverseOrder())
+//                .forEach(System.out::println);
+//        Stream.of(2,1,8,1,3,2)
+//                .distinct()
+//                .forEach(System.out::println);
+//        IntStream.concat(
+//                IntStream.range(2,5),
+//                IntStream.range(0,4))
+//                .distinct()
+//                .forEach(System.out::println);
 //  3 lesson
 //        Stream.of(120, 410, 85, 32, 314, 12)
 //                .filter(x -> x > 100)
