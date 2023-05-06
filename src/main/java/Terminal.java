@@ -1,50 +1,84 @@
 import java.util.List;
+import java.util.LongSummaryStatistics;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class Terminal {
     public static void main(String[] args) {
-        int anySeq, firstSeq, anyParallel, firstParallel;
+
         boolean result;
+        double result1;
+        long result2;
+
         System.out.println(
-                anySeq = IntStream.range(5, 65555)
-                        .findAny()
-                        .getAsInt());
-        System.out.println(
-                firstSeq = IntStream.range(5, 65555)
-                        .findFirst()
-                        .getAsInt()
-        );
-        System.out.println(
-                anyParallel = IntStream.range(5, 65555)
-                        .parallel()
-                        .findAny()
-                        .getAsInt()
-        );
-        System.out.println(
-                firstParallel = IntStream.range(5, 65555)
-                        .parallel()
-                        .findFirst()
-                        .getAsInt()
+                result = Stream.of(1, 2, 3, 4, 5)
+                        .noneMatch(x -> x == 9)
         );
         System.out.println(
                 result = Stream.of(1, 2, 3, 4, 5)
-                        .allMatch(x -> x <= 7)
+                        .noneMatch(x -> x == 3)
         );
         System.out.println(
-                result = Stream.of(1, 2, 3, 4, 5)
-                        .anyMatch(x -> x < 3)
+                result = Stream.of(120, 410, 86, 32, 314, 12)
+                        .noneMatch(x -> x % 2 == 1)
         );
         System.out.println(
-                result = Stream.of(120, 410, 85, 32, 314, 12)
-                        .allMatch(x -> x % 2 == 0)
+                 result1 = IntStream.range(2,16)
+                         .average()
+                         .getAsDouble()
         );
         System.out.println(
-                result = Stream.of(120, 410, 85, 32, 314, 12)
-                        .anyMatch(x -> x % 22 == 0)
+                result2 = LongStream.range(2,16)
+                        .sum()
         );
+        LongSummaryStatistics stats = LongStream.range(2,16)
+                .summaryStatistics();
+        System.out.format("  count: %d%n", stats.getCount());
+        System.out.format("    sum: %d%n", stats.getSum());
+        System.out.format("average: %.1f%n", stats.getAverage());
+        System.out.format("    min: %d%n", stats.getMin());
+        System.out.format("    max: %d%n", stats.getMax());
+//        int anySeq, firstSeq, anyParallel, firstParallel;
+//        System.out.println(
+//                anySeq = IntStream.range(5, 65555)
+//                        .findAny()
+//                        .getAsInt());
+//        System.out.println(
+//                firstSeq = IntStream.range(5, 65555)
+//                        .findFirst()
+//                        .getAsInt()
+//        );
+//        System.out.println(
+//                anyParallel = IntStream.range(5, 65555)
+//                        .parallel()
+//                        .findAny()
+//                        .getAsInt()
+//        );
+//        System.out.println(
+//                firstParallel = IntStream.range(5, 65555)
+//                        .parallel()
+//                        .findFirst()
+//                        .getAsInt()
+//        );
+//        System.out.println(
+//                result = Stream.of(1, 2, 3, 4, 5)
+//                        .allMatch(x -> x <= 7)
+//        );
+//        System.out.println(
+//                result = Stream.of(1, 2, 3, 4, 5)
+//                        .anyMatch(x -> x < 3)
+//        );
+//        System.out.println(
+//                result = Stream.of(120, 410, 85, 32, 314, 12)
+//                        .allMatch(x -> x % 2 == 0)
+//        );
+//        System.out.println(
+//                result = Stream.of(120, 410, 85, 32, 314, 12)
+//                        .anyMatch(x -> x % 22 == 0)
+//        );
 
 //
 //        int sum = Stream.of(1, 2, 3, 4, 5)
