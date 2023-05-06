@@ -6,6 +6,46 @@ import java.util.stream.Stream;
 
 public class Terminal {
     public static void main(String[] args) {
+        int anySeq, firstSeq, anyParallel, firstParallel;
+        boolean result;
+        System.out.println(
+                anySeq = IntStream.range(5, 65555)
+                        .findAny()
+                        .getAsInt());
+        System.out.println(
+                firstSeq = IntStream.range(5, 65555)
+                        .findFirst()
+                        .getAsInt()
+        );
+        System.out.println(
+                anyParallel = IntStream.range(5, 65555)
+                        .parallel()
+                        .findAny()
+                        .getAsInt()
+        );
+        System.out.println(
+                firstParallel = IntStream.range(5, 65555)
+                        .parallel()
+                        .findFirst()
+                        .getAsInt()
+        );
+        System.out.println(
+                result = Stream.of(1, 2, 3, 4, 5)
+                        .allMatch(x -> x <= 7)
+        );
+        System.out.println(
+                result = Stream.of(1, 2, 3, 4, 5)
+                        .anyMatch(x -> x < 3)
+        );
+        System.out.println(
+                result = Stream.of(120, 410, 85, 32, 314, 12)
+                        .allMatch(x -> x % 2 == 0)
+        );
+        System.out.println(
+                result = Stream.of(120, 410, 85, 32, 314, 12)
+                        .anyMatch(x -> x % 22 == 0)
+        );
+
 //
 //        int sum = Stream.of(1, 2, 3, 4, 5)
 //                .reduce(10, Integer::sum);
